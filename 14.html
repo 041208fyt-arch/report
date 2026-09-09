@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国际金融 (International Finance) 前四章全解与交互复习宝典</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax 用于完美渲染数学公式 -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 文本防溢出全局设定 */
+        * {
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .active-tab {
+            border-bottom: 3px solid #0284c7;
+            color: #0284c7;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- 顶部 Header -->
+    <header class="bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid font-bold text-3xl text-sky-400 fa-globe"></i>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tight">国际金融 (Multinational Financial Management)</h1>
+                    <p class="text-xs text-sky-300">第一章至第四章 核心知识点全解 · 考点精讲 · 计算推导 · 交互试题库</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2 text-xs bg-slate-800/80 p-2 rounded-lg border border-slate-700">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>标准考纲对齐 · 实时公式渲染</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面主体布局 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full flex flex-col lg:flex-row gap-8">
+        
+        <!-- 侧边栏 / 导航 -->
+        <aside class="lg:w-64 flex-shrink-0">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 sticky top-24">
+                <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">目录速览与导航</h2>
+                <nav class="space-y-1 text-sm">
+                    <a href="#ch1" class="flex items-center px-3 py-2 text-slate-700 rounded-lg hover:bg-sky-50 hover:text-brand-700 transition">
+                        <i class="fa-solid fa-building flex-shrink-0 w-6 text-sky-600"></i>
+                        <span>第一章：国际金融与MNE</span>
+                    </a>
+                    <a href="#ch2" class="flex items-center px-3 py-2 text-slate-700 rounded-lg hover:bg-sky-50 hover:text-brand-700 transition">
+                        <i class="fa-solid fa-coins flex-shrink-0 w-6 text-amber-500"></i>
+                        <span>第二章：国际货币体系</span>
+                    </a>
+                    <a href="#ch3" class="flex items-center px-3 py-2 text-slate-700 rounded-lg hover:bg-sky-50 hover:text-brand-700 transition">
+                        <i class="fa-solid fa-scale-balanced flex-shrink-0 w-6 text-emerald-600"></i>
+                        <span>第三章：国际收支平衡表</span>
+                    </a>
+                    <a href="#ch4" class="flex items-center px-3 py-2 text-slate-700 rounded-lg hover:bg-sky-50 hover:text-brand-700 transition">
+                        <i class="fa-solid fa-briefcase flex-shrink-0 w-6 text-indigo-600"></i>
+                        <span>第四章：目标与公司治理</span>
+                    </a>
+                </nav>
+                
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <div class="bg-amber-50 rounded-lg p-3 border border-amber-200 text-xs text-amber-800">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> 复习建议</p>
+                        <p>各章末尾均已配备对应考点习题与计算推导，建议看完核心概念后直接完成测验。</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="flex-1 min-w-0 space-y-8">
+
+            <!-- 第一章 -->
+            <section id="ch1" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 relative">
+                <div class="flex items-center space-x-3 pb-4 border-b border-slate-100 mb-6">
+                    <span class="bg-sky-100 text-sky-800 text-xs font-bold px-2.5 py-1 rounded">Chapter 1</span>
+                    <h2 class="text-2xl font-bold text-slate-900">第一章：国际金融导论与企业全球化进程</h2>
+                </div>
+
+                <!-- 1.1 概念对比 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-sky-500 mr-2 text-sm"></i>1.1 跨国公司 (MNE) 与国际金融核心三要素
+                    </h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        <strong>跨国企业 (Multinational Enterprise, MNE)</strong> 是指在两个或两个以上国家拥有生产或服务设施、通过对外直接投资 (FDI) 开展跨境业务控制的企业。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1 text-sky-700"><i class="fa-solid fa-shield-halved mr-1"></i> 外汇风险 (FX Risk)</h4>
+                            <p class="text-xs text-slate-600">现金流和资产负债易受汇率不确定波动的冲击，需通过远期、期权等衍生工具进行套期保值。</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1 text-rose-700"><i class="fa-solid fa-gavel mr-1"></i> 政治风险 (Political Risk)</h4>
+                            <p class="text-xs text-slate-600">包含东道国的资产征用 (Expropriation)、外汇管制、税率变更及政局动荡风险。</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1 text-emerald-700"><i class="fa-solid fa-ban-smoking mr-1"></i> 市场不完美 (Market Imperfections)</h4>
+                            <p class="text-xs text-slate-600">关税、配额、交易成本、法律制度差异及信息不对称阻碍了商品和资本的自由流动。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.2 欧洲货币市场 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-sky-500 mr-2 text-sm"></i>1.2 欧洲货币市场 (Eurocurrency Market)
+                    </h3>
+                    <div class="bg-sky-50 border-l-4 border-sky-500 p-4 rounded-r-lg text-sm text-slate-700 space-y-2">
+                        <p><strong>本质定义：</strong> 存放在**原发行国境外银行**（或不受原国金融监管局直接管辖的境外分支机构）的该国货币存款。例如：存放在伦敦或东京银行的美元称为**欧洲美元 (Eurodollar)**。</p>
+                        <p><strong>两大核心作用：</strong> (1) 为跨国公司富余的短期流动性资金提供高效率存款渠道；(2) 作为无管制、高效率的短期国际银行贷款来源。</p>
+                        <p><strong>历史背景：</strong> 冷战时期，苏联等东欧国家担心置于美国本土的美元资产被美国政府扣押或冻结，因而将美元转存至西欧（伦敦、巴黎）的银行，由此孕育了欧洲货币市场。</p>
+                    </div>
+                </div>
+
+                <!-- 1.3 Ganado 案例与全球化三阶段 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-sky-500 mr-2 text-sm"></i>1.3 企业全球化三阶段演进 (Ganado 案例)
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-slate-200 space-y-6 text-sm">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-slate-400 border-2 border-white"></span>
+                            <h4 class="font-bold text-slate-800">阶段 1：国内阶段 (Domestic Phase)</h4>
+                            <p class="text-slate-600 text-xs">仅在本土生产和销售。面临问题：国内市场饱和、本土资金成本高。通过**过渡 1** 开始国际买卖交易。</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-sky-500 border-2 border-white"></span>
+                            <h4 class="font-bold text-sky-700">阶段 2：国际贸易阶段 (International Trade Phase)</h4>
+                            <p class="text-slate-600 text-xs">直接向海外出口产品（如加拿大），或从国外（如墨西哥）进口原料。**风险暴露：直接外汇风险与跨境信用风险**。通过**过渡 2** 开展对外直接投资 (FDI)。</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-indigo-600 border-2 border-white"></span>
+                            <h4 class="font-bold text-indigo-800">阶段 3：跨国/跨国公司阶段 (Multinational Phase)</h4>
+                            <p class="text-slate-600 text-xs">通过建立海外分支、技术许可 (Licensing)、海外合资企业 (Joint Venture) 或新建绿地投资 (Greenfield) 拥有海外实体。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.4 折中理论 OLI 与跨国动因 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm text-indigo-700">邓宁折中理论 (Dunning's OLI Paradigm)</h4>
+                        <ul class="list-disc list-inside text-slate-600 space-y-1">
+                            <li><strong>所有权优势 (Ownership):</strong> 拥有专利、技术、品牌或规模经济优势。</li>
+                            <li><strong>区位优势 (Location):</strong> 东道国拥有低成本劳动力、资源或市场需求。</li>
+                            <li><strong>内部化优势 (Internalization):</strong> 自己生产比通过许可或外包能更好地防止技术泄露并降低交易成本。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm text-rose-700">经典政治风险案例 (安然 Dabhol 电厂)</h4>
+                        <p class="text-slate-600">1990年代，安然在印度马哈拉施特拉邦投资30亿美元建设天然气电厂。后因印度政党更替，新政府以“缺乏透明度、购电价格过高”为由强制取消购电协议 (PPA) 并叫停项目。案例警示：东道国国内政治轮替是跨国企业面临的最直接政治风险之一。</p>
+                    </div>
+                </div>
+
+                <!-- 1.5 本章巩固习题 -->
+                <div class="mt-6 pt-6 border-t border-slate-100">
+                    <h3 class="text-base font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-pen-to-square text-sky-500 mr-2"></i>第一章 巩固习题
+                    </h3>
+                    <div class="p-4 rounded-lg border border-slate-200 bg-slate-50 hover:border-slate-300 transition">
+                        <p class="font-bold text-slate-800 text-sm mb-2">1. (考点: 欧洲货币) 存放在英国伦敦某商业银行的美元存款，在国际金融中被称为：</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 mb-3">
+                            <div class="p-2 bg-white rounded border border-slate-200">A. 离岸英镑 (Offshore GBP)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">B. 欧洲美元 (Eurodollar)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">C. 外汇储备 (Foreign Reserve)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">D. 特别提款权 (SDR)</div>
+                        </div>
+                        <button onclick="toggleAnswer('ans1')" class="text-xs text-sky-600 font-bold hover:underline focus:outline-none">
+                            <i class="fa-solid fa-eye mr-1"></i>显示答案与解析
+                        </button>
+                        <div id="ans1" class="hidden mt-3 p-3 bg-emerald-50 rounded text-xs border border-emerald-200 text-emerald-900">
+                            <strong>正确答案：B</strong><br>
+                            <em>解析：</em>欧洲货币 (Eurocurrency) 是指存放在货币发行国境外银行的存款。存放于美国境外（伦敦）的美元存款即为“欧洲美元”。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第二章 -->
+            <section id="ch2" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 relative">
+                <div class="flex items-center space-x-3 pb-4 border-b border-slate-100 mb-6">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded">Chapter 2</span>
+                    <h2 class="text-2xl font-bold text-slate-900">第二章：国际货币体系与汇率制度</h2>
+                </div>
+
+                <!-- 2.1 演进历程 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-amber-500 mr-2 text-sm"></i>2.1 国际货币体系演进四个阶段
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left text-slate-600 border border-slate-200">
+                            <thead class="bg-slate-100 text-slate-800 font-bold">
+                                <tr>
+                                    <th class="p-2.5 border-b">阶段</th>
+                                    <th class="p-2.5 border-b">核心机制</th>
+                                    <th class="p-2.5 border-b">特点与崩溃原因</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="p-2.5 font-bold">金本位制 (1876-1913)</td>
+                                    <td class="p-2.5">规定货币含金量 (Par Value)，黄金自由进出口，实行休姆“物价-金币流动机制”。</td>
+                                    <td class="p-2.5">一战爆发导致贸易中断、黄金自由流动受阻而崩溃。</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 font-bold">战间期 (1914-1944)</td>
+                                    <td class="p-2.5">缺乏统一标准，各国进行以邻为壑的**掠夺性货币贬值 (Predatory Depreciations)**。</td>
+                                    <td class="p-2.5">汇率剧烈波动，国际贸易陷入瘫痪。</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 font-bold">布雷顿森林体系 (1944-1973)</td>
+                                    <td class="p-2.5">双挂钩（美元与黄金挂钩 $$1\text{盎司}=35\text{美元}$$，其他货币与美元挂钩，波动 $\pm1\%$）。成立 IMF 和世界银行。</td>
+                                    <td class="p-2.5">**特里芬难题 (Triffin Paradox)**：美元无法同时满足全球流动性需求与保持对黄金的兑换稳定性。1971尼克松关停黄金窗口，1973体系崩溃。</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 font-bold">浮动汇率时代 (1973至今)</td>
+                                    <td class="p-2.5">多种汇率安排并存，牙买加体系确立黄金非货币化。</td>
+                                    <td class="p-2.5">汇率波动加剧，新兴市场频繁爆发货币危机。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2.2 不可能三角 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-amber-500 mr-2 text-sm"></i>2.2 三元悖论 / 不可能三角 (The Impossible Trinity)
+                    </h3>
+                    <p class="text-slate-600 text-sm mb-4">一国在以下三个目标中**最多只能同时实现两个**，不可能三者兼得：</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                            <div class="font-bold text-amber-900 text-sm mb-1">目标 1：汇率稳定性 (Exchange Rate Stability)</div>
+                            <p class="text-slate-600">消除外汇风险，促进国际贸易与跨境投资。</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                            <div class="font-bold text-amber-900 text-sm mb-1">目标 2：货币政策独立性 (Monetary Independence)</div>
+                            <p class="text-slate-600">自主调控国内利率与货币供应量以应对通货膨胀或经济衰退。</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                            <div class="font-bold text-amber-900 text-sm mb-1">目标 3：资本完全自由流动 (Full Financial Integration)</div>
+                            <p class="text-slate-600">高效吸引外资并允许国内资金进行全球资产配置。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-700">
+                        <p class="font-bold text-slate-800 mb-1">三大经典组合路径：</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>美国 / 日本 / 欧元区整体 (选择 2+3):</strong> 放弃汇率稳定，实行**完全浮动汇率**。</li>
+                            <li><strong>中国以往模式 (选择 1+2):</strong> 放弃资本完全自由流动，实行**资本项目管制**。</li>
+                            <li><strong>欧元区各成员国如法国、德国 (选择 1+3):</strong> 放弃独立货币政策，统一使用欧元（由 ECB 统一制定货币政策）。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2.3 欧元区与人民币 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm text-indigo-700">欧洲经济货币联盟 (EMU) 马斯特里赫特四大趋同标准</h4>
+                        <ol class="list-decimal list-inside text-slate-600 space-y-1 font-semibold">
+                            <li>通货膨胀率：不超过通胀最低三国平均值的 $$1.5\%$$。</li>
+                            <li>长期利率：不超过利率最低三国平均值的 $$2.0\%$$。</li>
+                            <li>财政赤字：占 GDP 比重不得超过 $$3.0\%$$。</li>
+                            <li>政府公共债务总额：占 GDP 比重不得超过 $$60.0\%$$。</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm text-emerald-700">特别提款权 (SDR) 篮子与在岸/离岸人民币</h4>
+                        <p class="text-slate-600"><strong>SDR (2022最新权重):</strong> 美元 (43.38%) > 欧元 (29.31%) > 人民币 (12.28%) > 日元 (7.59%) > 英镑 (7.44%)。</p>
+                        <p class="text-slate-600"><strong>CNY vs CNH:</strong> 在岸人民币 (CNY) 受央行中间价与 $\pm2\%$ 浮动限制；离岸人民币 (CNH，如香港) 由市场供求决定，无资本管制，波动性更强。</p>
+                    </div>
+                </div>
+
+                <!-- 2.4 本章精选计算与考点习题 -->
+                <div class="mt-6 pt-6 border-t border-slate-100 space-y-4">
+                    <h3 class="text-base font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-pen-to-square text-amber-500 mr-2"></i>第二章 计算推导与巩固习题
+                    </h3>
+
+                    <!-- 计算题 1 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-3">
+                        <div class="font-bold text-slate-800 text-sm flex justify-between items-center">
+                            <span>【精选计算】古典金本位下的铸币平价与套汇计算 (Gold Standard Mint Par)</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">计算例题</span>
+                        </div>
+                        <p class="text-xs text-slate-600">
+                            <strong>题目：</strong> 一战前，美国官方规定的黄金官价为 $$20.67 \text{ USD} = 1 \text{ 盎司黄金}$$；英国官方规定的黄金官价为 $$4.2474 \text{ GBP} = 1 \text{ 盎司黄金}$$；法国官价为 $$410.00 \text{ FF} = 1 \text{ 盎司黄金}$$。<br>
+                            <strong>求：</strong> (1) 英镑对美元的铸币平价汇率 ($\$/£$)；(2) 法郎对美元的铸币平价汇率 ($\text{FF}/\$$)。
+                        </p>
+                        <div class="p-3 bg-white rounded border border-slate-200 text-xs space-y-2 font-mono">
+                            <p class="font-bold text-amber-800 font-sans">【推导步骤】</p>
+                            <p>(1) 求解 美元/英镑 ($\$/£$) 汇率：</p>
+                            $$\because 1 \text{ 盎司黄金} = \$20.67 = £4.2474$$
+                            $$\therefore \text{Exchange Rate (\$/£)} = \frac{\$20.67}{£4.2474} \approx 4.8665 \text{ \$/£}$$
+                            <p>(2) 求解 法郎/美元 ($\text{FF}/\$$) 汇率：</p>
+                            $$\because 1 \text{ 盎司黄金} = \$20.67 = \text{FF } 410.00$$
+                            $$\therefore \text{Exchange Rate (FF/\$)} = \frac{\text{FF } 410.00}{\$20.67} \approx 19.8355 \text{ FF/\$}$$
+                        </div>
+                    </div>
+
+                    <!-- MCQ 2 -->
+                    <div class="p-4 rounded-lg border border-slate-200 bg-slate-50 hover:border-slate-300 transition">
+                        <p class="font-bold text-slate-800 text-sm mb-2">【单项选择】根据“三元悖论”(The Impossible Trinity)，如果一个国家选择了资本自由流动和独立的货币政策，它必须放弃：</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 mb-3">
+                            <div class="p-2 bg-white rounded border border-slate-200">A. 通货膨胀控制</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">B. 汇率稳定性 (Exchange Rate Stability)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">C. 财政政策自主权</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">D. 官方外汇储备</div>
+                        </div>
+                        <button onclick="toggleAnswer('ans2')" class="text-xs text-amber-700 font-bold hover:underline focus:outline-none">
+                            <i class="fa-solid fa-eye mr-1"></i>显示答案与解析
+                        </button>
+                        <div id="ans2" class="hidden mt-3 p-3 bg-emerald-50 rounded text-xs border border-emerald-200 text-emerald-900">
+                            <strong>正确答案：B</strong><br>
+                            <em>解析：</em>三元悖论指出：汇率稳定、货币政策独立性和资本完全流动不可兼得。选择资本自由流动与独立货币政策（如美国、日本），就必须放弃汇率稳定，采用浮动汇率制。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第三章 -->
+            <section id="ch3" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 relative">
+                <div class="flex items-center space-x-3 pb-4 border-b border-slate-100 mb-6">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded">Chapter 3</span>
+                    <h2 class="text-2xl font-bold text-slate-900">第三章：国际收支平衡表 (Balance of Payments, BOP)</h2>
+                </div>
+
+                <!-- 3.1 定义与记账原则 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-emerald-500 mr-2 text-sm"></i>3.1 BOP 的本质与“复式记账法则”
+                    </h3>
+                    <p class="text-slate-600 text-sm mb-3">
+                        BOP 是记录一国居民 (Residents) 与非居民 (Non-residents) 在特定时期内所有国际经济交易的**现金流量表 (Flow Statement)**。
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-lg">
+                            <span class="font-bold text-emerald-800 text-sm">贷方记账 (Credit, +)</span>
+                            <p class="text-slate-600 mt-1">**资金流入本国**的交易。例如：商品/服务出口、外国人在本国投资、本国收到海外援助或股息流入。</p>
+                        </div>
+                        <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg">
+                            <span class="font-bold text-rose-800 text-sm">借方记账 (Debit, -)</span>
+                            <p class="text-slate-600 mt-1">**资金流出本国**的交易。例如：商品/服务进口、购买外国股票/债券、本国对外援助或支付外方利息。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.2 账户构成 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-emerald-500 mr-2 text-sm"></i>3.2 BOP 四大账户构成
+                    </h3>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 border border-slate-200 rounded-lg bg-slate-50">
+                            <div class="font-bold text-slate-800 text-sm mb-1 text-sky-700">1. 经常账户 (Current Account, CA)</div>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                               <li><strong>货物贸易 (Goods):</strong> 实体有形商品进出口。</li>
+                               <li><strong>服务贸易 (Services):</strong> 旅游、运输、咨询、金融服务、专利许可费等。</li>
+                               <li><strong>初次收入 (Primary Income):</strong> 投资收益（海外员工薪酬、股息、利息支付）。</li>
+                               <li><strong>二次收入 (Secondary Income):</strong> 单方面无偿转移（海外侨汇、政府捐赠、国际援助）。</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3 border border-slate-200 rounded-lg bg-slate-50">
+                            <div class="font-bold text-slate-800 text-sm mb-1 text-amber-700">2. 资本账户 (Capital Account)</div>
+                            <p class="text-slate-600">包含固定资产转移、非生产非金融资产（如版权、专利权买卖）的处置以及债务豁免。</p>
+                        </div>
+
+                        <div class="p-3 border border-slate-200 rounded-lg bg-slate-50">
+                            <div class="font-bold text-slate-800 text-sm mb-1 text-indigo-700">3. 金融账户 (Financial Account, FA)</div>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                               <li><strong>直接投资 (FDI):</strong> 拥有目标企业 **$$10\%$$ 或以上**表决权股份，追求长期控制权。</li>
+                               <li><strong>证券投资 (Portfolio Investment):</strong> 购买低于 $$10\%$$ 股权的股票或债券、票据，纯粹追求财务回报。</li>
+                               <li><strong>其他投资 (Other Investment):</strong> 跨国银行贷款、贸易信贷、存款。</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3 border border-slate-200 rounded-lg bg-slate-50">
+                            <div class="font-bold text-slate-800 text-sm mb-1 text-purple-700">4. 官方储备账户 (Official Reserves Account) & 净误差与遗漏</div>
+                            <p class="text-slate-600">由中央银行持有的黄金、外汇储备、SDR 及 IMF 储备头寸组成。净误差与遗漏用于轧平统计偏差。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.3 J-曲线效应 -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-emerald-500 mr-2 text-sm"></i>3.3 本币贬值与 J-曲线效应 (J-Curve Effect)
+                    </h3>
+                    <p class="text-slate-600 text-xs mb-3">当一国本币贬值时，贸易收支并不立即改善，而是先恶化再改善，轨迹呈“J”字形：</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                        <div class="p-3 bg-slate-100 rounded-lg border border-slate-200">
+                            <span class="font-bold text-slate-800">阶段 1：外汇合约期 (3-6个月)</span>
+                            <p class="text-slate-600 mt-1">既有合同无法修改，进出口**数量保持不变**。以本币计价的进口商品变贵，**贸易逆差短期内加剧**。</p>
+                        </div>
+                        <div class="p-3 bg-slate-100 rounded-lg border border-slate-200">
+                            <span class="font-bold text-slate-800">阶段 2：传导期 (Pass-Through)</span>
+                            <p class="text-slate-600 mt-1">进口商与出口商开始调整商品市场零售价格，汇率变动逐步向消费端传导。</p>
+                        </div>
+                        <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                            <span class="font-bold text-emerald-800">阶段 3：数量调整期</span>
+                            <p class="text-slate-600 mt-1">相对价格发挥作用，国内消费者减少高价进口商品，国外买家增加本国商品采购，**贸易收支最终扭亏为盈**。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例：1997泰铢危机 -->
+                <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded-r-lg text-xs text-rose-900 space-y-1">
+                    <p class="font-bold text-sm"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 1997 泰国金融危机与资本外逃 (Capital Flight)</p>
+                    <p>危机前，泰国实行泰铢固定钉住美元，同时开放资本账户。泰国企业借入大量低息美元短债，但投资于国内房地产等非贸易品。1997外资信心崩溃掀起突发性资本外逃，泰铢遭到强烈做空。泰国央行为维持汇率耗尽外汇储备后被迫放弃固定汇率，泰铢一日暴跌 20% 以上，导致企业美元债务翻倍暴雷，触发全亚洲金融危机。</p>
+                </div>
+
+                <!-- 3.4 本章巩固习题 -->
+                <div class="mt-6 pt-6 border-t border-slate-100 space-y-4">
+                    <h3 class="text-base font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-pen-to-square text-emerald-600 mr-2"></i>第三章 巩固习题
+                    </h3>
+
+                    <!-- MCQ 3 -->
+                    <div class="p-4 rounded-lg border border-slate-200 bg-slate-50 hover:border-slate-300 transition">
+                        <p class="font-bold text-slate-800 text-sm mb-2">1. (考点: BOP记账法则) 一国居民向海外慈善机构无偿捐赠 100 万美元现金，在 BOP 平衡表中应记录为：</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 mb-3">
+                            <div class="p-2 bg-white rounded border border-slate-200">A. 经常账户 - 二次收入 (Secondary Income) 借方 (-)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">B. 经常账户 - 货物贸易 贷方 (+)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">C. 金融账户 - 直接投资 借方 (-)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">D. 资本账户 贷方 (+)</div>
+                        </div>
+                        <button onclick="toggleAnswer('ans3')" class="text-xs text-emerald-700 font-bold hover:underline focus:outline-none">
+                            <i class="fa-solid fa-eye mr-1"></i>显示答案与解析
+                        </button>
+                        <div id="ans3" class="hidden mt-3 p-3 bg-emerald-50 rounded text-xs border border-emerald-200 text-emerald-900">
+                            <strong>正确答案：A</strong><br>
+                            <em>解析：</em>无偿捐赠属于单方面转移，记入经常账户中的二次收入（经常转移）；由于资金流出本国，因此记为借方 (Debit, -)。
+                        </div>
+                    </div>
+
+                    <!-- MCQ 5 -->
+                    <div class="p-4 rounded-lg border border-slate-200 bg-slate-50 hover:border-slate-300 transition">
+                        <p class="font-bold text-slate-800 text-sm mb-2">2. (考点: FDI vs Portfolio) 在跨国资本流动中，如果美国一家基金公司购买了某日本上市公司 $$3\%$$ 的股票，这笔交易应记入美国 BOP 的：</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 mb-3">
+                            <div class="p-2 bg-white rounded border border-slate-200">A. 金融账户 - 对外直接投资 (FDI)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">B. 金融账户 - 证券投资 (Portfolio Investment)</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">C. 经常账户 - 初次收入</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">D. 官方储备账户</div>
+                        </div>
+                        <button onclick="toggleAnswer('ans5')" class="text-xs text-emerald-700 font-bold hover:underline focus:outline-none">
+                            <i class="fa-solid fa-eye mr-1"></i>显示答案与解析
+                        </button>
+                        <div id="ans5" class="hidden mt-3 p-3 bg-emerald-50 rounded text-xs border border-emerald-200 text-emerald-900">
+                            <strong>正确答案：B</strong><br>
+                            <em>解析：</em>FDI 与证券投资 (Portfolio) 的划分界限通常为 **$$10\%$$** 表决权股份。低于 $$10\%$$（此处为 $$3\%$$）且不追求管理控制权的股权投资，属于“证券投资”。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第四章 -->
+            <section id="ch4" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 relative">
+                <div class="flex items-center space-x-3 pb-4 border-b border-slate-100 mb-6">
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded">Chapter 4</span>
+                    <h2 class="text-2xl font-bold text-slate-900">第四章：公司财务目标与公司治理 (Corporate Governance)</h2>
+                </div>
+
+                <!-- 4.1 SWM vs SCM -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-circle-dot text-indigo-500 mr-2 text-sm"></i>4.1 两种资本主义模式与公司财务目标对比
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left text-slate-600 border border-slate-200">
+                            <thead class="bg-slate-100 text-slate-800 font-bold">
+                                <tr>
+                                    <th class="p-2.5 border-b">维度</th>
+                                    <th class="p-2.5 border-b">股东财富最大化模型 (SWM)</th>
+                                    <th class="p-2.5 border-b">利益相关者资本主义模型 (SCM)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="p-2.5 font-bold">代表区域</td>
+                                    <td class="p-2.5 text-indigo-700 font-semibold">盎格鲁-撒克逊模式 (美、英、加、澳)</td>
+                                    <td class="p-2.5 text-emerald-700 font-semibold">莱茵模式 / 非盎格鲁模式 (德、法、日、欧洲大陆)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 font-bold">核心目标</td>
+                                    <td class="p-2.5">追求**股东权益价值最大化**（股价上涨 + 股利）。</td>
+                                    <td class="p-2.5">兼顾股东、员工、供应商、债权人、社区与环境的整体综合利益。</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 font-bold">对资本市场的假设</td>
+                                    <td class="p-2.5">假设资本市场是**有效的 (Efficient)**，股价能即时准确反映一切公开信息。</td>
+                                    <td class="p-2.5">认为股市存在短视主义，强调企业的长期生存与稳定运营。</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 font-bold">典型组织结构</td>
+                                    <td class="p-2.5">股权高度分散，注重季度每股收益 (EPS)。</td>
+                                    <td class="p-2.5">存在**交叉持股**（如日本 Keiretsu 系列）、双层董事会（如德国 Supervisory Board）。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 4.2 代理人问题与爱马仕案例 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm text-indigo-700">代理理论 (Agency Theory) 与股票期权争议</h4>
+                        <p class="text-slate-600"><strong>代理问题：</strong> 所有权与经营权分离后，高管 (Agent) 可能出于个人利益损害股东 (Principal) 利益。</p>
+                        <p class="text-slate-600"><strong>期权激励的观点碰撞：</strong> SWM 认为发放股票期权能将高管与股价绑定，缓解代理成本；SCM 批评者认为期权会导致高管过度追求短期股价膨胀，引发会计造假并损害企业长期可持续性。</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm text-rose-700">家族企业优势与爱马仕 (Hermès) 防恶收购案例</h4>
+                        <p class="text-slate-600">家族企业通过长期视域 (Long-term Focus) 往往表现优异。2010年为反抗 LVMH 集团的隐蔽恶意收购，50多位爱马仕家族成员统一战线，成立**H51 控股公司**（锁定 $50.2\%$ 股份且约定20年不出售），成功捍卫了公司控制权。</p>
+                    </div>
+                </div>
+
+                <!-- 4.3 SOX 法案与 OECD 原则 -->
+                <div class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg text-xs text-indigo-950">
+                    <p class="font-bold text-sm mb-1"><i class="fa-solid fa-gavel mr-1"></i> 萨班斯-奥克斯利法案 (Sarbanes-Oxley Act / SOX 2002) 核心考点</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>高管签字保真：</strong> CEO 与 CFO 必须亲自对财报真实性签字担保，虚假陈述将承担刑事责任。</li>
+                        <li><strong>审计独立性：</strong> 审计委员会必须完全由**外部独立董事**组成，严禁审计公司向被审计对象提供咨询服务。</li>
+                        <li><strong>内部控制评价 (Section 404)：</strong> 强制管理层对公司财务报告的内部控制评价并由会计师事务所审计。</li>
+                    </ul>
+                </div>
+
+                <!-- 4.4 本章精选计算与考点习题 -->
+                <div class="mt-6 pt-6 border-t border-slate-100 space-y-4">
+                    <h3 class="text-base font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-pen-to-square text-indigo-600 mr-2"></i>第四章 计算推导与巩固习题
+                    </h3>
+
+                    <!-- 计算题 2 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-3">
+                        <div class="font-bold text-slate-800 text-sm flex justify-between items-center">
+                            <span>【精选计算】股东总回报率 (Total Shareholder Return, TSR) 拆分计算</span>
+                            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded">计算例题</span>
+                        </div>
+                        <p class="text-xs text-slate-600">
+                            <strong>题目：</strong> 某航运公司的股票年初价格为 $$P_1 = \$12$$，年末价格上涨至 $$P_2 = \$15$$。计算：<br>
+                            a. 若公司支付每股股利 $$D = \$1$$，求股东的总回报率 (Total Return)；<br>
+                            b. 请将总回报率拆分为**股利收益率 (Dividend Yield)** 与 **资本利得收益率 (Capital Gains Yield)**。
+                        </p>
+                        <div class="p-3 bg-white rounded border border-slate-200 text-xs space-y-2 font-mono">
+                            <p class="font-bold text-indigo-800 font-sans">【推导步骤】</p>
+                            <p>通用计算公式：</p>
+                            $$\text{Total Return} = \frac{D_1 + (P_2 - P_1)}{P_1} = \frac{D_1}{P_1} + \frac{P_2 - P_1}{P_1}$$
+                            <p>代入数值：</p>
+                            $$\text{Total Return} = \frac{1 + (15 - 12)}{12} = \frac{4}{12} \approx 33.33\%$$
+                            <p>拆分项目：</p>
+                            $$\text{Dividend Yield (股利收益率)} = \frac{\$1}{\$12} \approx 8.33\%$$
+                            $$\text{Capital Gains Yield (资本利得收益率)} = \frac{\$15 - \$12}{\$12} = \frac{\$3}{\$12} = 25.00\%$$
+                            $$\text{Total Return} = 8.33\% + 25.00\% = 33.33\%$$
+                        </div>
+                    </div>
+
+                    <!-- MCQ 4 -->
+                    <div class="p-4 rounded-lg border border-slate-200 bg-slate-50 hover:border-slate-300 transition">
+                        <p class="font-bold text-slate-800 text-sm mb-2">【单项选择】下列关于萨班斯-奥克斯利法案 (SOX 2002) 的表述中，错误的是：</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 mb-3">
+                            <div class="p-2 bg-white rounded border border-slate-200">A. 要求 CEO 与 CFO 对公司财务报告真实性亲自签字</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">B. 要求审计委员会完全由独立董事组成</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">C. 鼓励会计师事务所同时向被审计公司提供高额管理咨询服务</div>
+                            <div class="p-2 bg-white rounded border border-slate-200">D. 规定第 404 条款强制评估财务报告内部控制系统</div>
+                        </div>
+                        <button onclick="toggleAnswer('ans4')" class="text-xs text-indigo-700 font-bold hover:underline focus:outline-none">
+                            <i class="fa-solid fa-eye mr-1"></i>显示答案与解析
+                        </button>
+                        <div id="ans4" class="hidden mt-3 p-3 bg-emerald-50 rounded text-xs border border-emerald-200 text-emerald-900">
+                            <strong>正确答案：C</strong><br>
+                            <em>解析：</em>SOX 法案为了保证审计独立性，明确**严禁**审计公司向同一家上市公司提供非审计类的管理咨询服务，防止产生利益冲突。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+            <p>《国际金融》前四章系统复习与讲义指南 · 专为高效备考与学术推导设计</p>
+            <p class="text-slate-600">内容包含：Multinational Enterprises, IMS, Trilemma, BOP, Corporate Governance & Calculations.</p>
+        </div>
+    </footer>
+
+    <!-- 交互脚本 -->
+    <script>
+        function toggleAnswer(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
